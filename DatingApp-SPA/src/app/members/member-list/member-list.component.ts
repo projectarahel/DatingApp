@@ -27,7 +27,7 @@ export class MemberListComponent implements OnInit {
   pagination: Pagination;
 
   constructor(private userService: UserService,
-    private alertify: AlertifyService,
+    private alertifyService: AlertifyService,
     private route: ActivatedRoute) { }
 
   ngOnInit() {
@@ -61,7 +61,7 @@ export class MemberListComponent implements OnInit {
             this.users = res.result;
             this.pagination = res.pagination;
           }, error => {
-            this.alertify.error(error);
+            this.alertifyService.error(error);
           });
   }
 }
